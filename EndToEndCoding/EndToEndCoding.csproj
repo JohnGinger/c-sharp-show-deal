@@ -79,6 +79,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.png" />
+    <Content Include="Static\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Static\js\app.js" />
+    <Content Include="Static\js\controller.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -96,6 +101,8 @@
       <SubType>
       </SubType>
     </Content>
+    <Content Include="Static\css\app.scss" />
+    <Content Include="Static\css\_colours.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

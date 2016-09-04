@@ -7,7 +7,7 @@ namespace EndToEndCoding
     {
         public App()
         {
-            Get["/"] = _ => "Hello!";
+            Get["/"] = _ => Response.AsFile("Static/index.html", "text/html"); ;
             Get["/api/offer/{id}"] = parameters => getResponse(parameters.id);
         }
 
