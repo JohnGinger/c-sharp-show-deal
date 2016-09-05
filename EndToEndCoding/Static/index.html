@@ -1,73 +1,77 @@
 ﻿<!doctype html>
 <html ng-app="offerApp">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="Static/css/app.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="Static/js/app.js"></script>
 </head>
-<body>
-    <main-body ng-controller="OfferController as offer">
-        <button ng-click="offer.getOffer(0)">Show Offer 1</button>
-        <button ng-click="offer.getOffer(1)">Show Offer 2</button>
-        <header-block class="offer" ng-show="offer.loaded">
-            <h1>Your Bundle</h1>
-            <header-block>
-                <provider-block>
-                    <img ng-src="{{offer.data.providerLogoUrl}}" alt="{{offer.data.providerName}} Logo" />
-                </provider-block>
-                <offer-type>
-                    <h2>{{offer.data.name}}</h2>
-                    <contract-length>{{offer.data.contractLengthDisplay}}</contract-length>
-                </offer-type>
-                <offers-section>
-                    <img ng-src="{{offer.data.offerImage}}" alt="An offer" />
-                    <h2>{{offer.data.offerEndNote}}</h2>
-                </offers-section>
-                <a ng-href="{{offer.data.linkTrackerUrl}}">Start Your Order</a>
-            </header-block>
-            <main-body>
-                <key-points>
-                    <key-point class="speed">
-                        <h3>Speed</h3>
-                        <key-point-value>
-                            {{offer.data.downloadSpeedDisplay}}
-                        </key-point-value>
-                    </key-point>
-                    <key-point class="download">
-                        <h3>Download Limits</h3>
-                        <key-point-value>
-                            {{offer.data.downloadLimitDisplay}}
-                        </key-point-value>
-                    </key-point>
-                    <key-point class="calls">
-                        <h3>Calls</h3>
-                        <key-point-value>
-                            {{offer.data.callsDisplay}}
-                        </key-point-value>
-                    </key-point>
-                </key-points>
-                <cost-section>
-                    <monthly-cost>
-                        <h3>Monthly Cost</h3>
-                        <div>{{ offer.data.costsWithLineRental.monthlyCostDisplay}}</div>
-                        <div class="note">{{ offer.data.costsWithLineRental.monthlyCostNote}}</div>
-                        <button ng-click="offer.showDetailedCost = !offer.showDetailedCost">Breakdown</button>
-                    </monthly-cost>
-                    <detailed-cost ng-show="offer.showDetailedCost">
-                        <h3>Monthly Cost</h3>
-                        <ul>
-                            <li ng-repeat="breakdown in offer.data.costsWithLineRental.costBreakdown">
-                                <h4>{{breakdown.value}} {{breakdown.description}}</h4>
-                            </li>
-                        </ul>
-                        <p></p>
-                        <h3>Installation Cost</h3>
-                        <p>{{offer.data.costsWithLineRental.installationCostDisplay}}</p>
-                        <h3>Delivery Cost</h3>
-                        <p>{{offer.data.costsWithLineRental.deliveryCostDisplay}}</p>
+<body ng-controller="OfferController as offer">
+    <select-button>
+        <button ng-click="offer.getOffer(0)" class="btn btn-default">Show Offer 1</button>
+        <button ng-click="offer.getOffer(1)" class="btn btn-default">Show Offer 2</button>
+    </select-button>
+    <offer-body ng-show="offer.loaded">
+        <title-section>
+            <h1>Your Chosen Bundle</h1>
+            <a ng-href="{{offer.data.linkTrackerUrl}}" class="start-order">Start Your Order</a>
+        </title-section>
+        <header-block>
+            <provider-block>
+                <img ng-src="{{offer.data.providerLogoUrl}}" alt="{{offer.data.providerName}} Logo" />
+            </provider-block>
+            <offer-type>
+                <h2>{{offer.data.name}}</h2>
+                <contract-length>{{offer.data.contractLengthDisplay}}</contract-length>
+            </offer-type>
+            <offers-section>
+                <img ng-src="{{offer.data.offerImage}}" alt="An offer" />
+                <div>{{offer.data.offerEndNote}}</div>
+            </offers-section>
+        </header-block>
+        <main-body>
+            <key-points>
+                <key-point class="speed">
+                    <h3>Speed</h3>
+                    <key-point-value>
+                        {{offer.data.downloadSpeedDisplay}}
+                    </key-point-value>
+                </key-point>
+                <key-point class="download">
+                    <h3>Download Limits</h3>
+                    <key-point-value>
+                        {{offer.data.downloadLimitDisplay}}
+                    </key-point-value>
+                </key-point>
+                <key-point class="calls">
+                    <h3>Calls</h3>
+                    <key-point-value>
+                        {{offer.data.callsDisplay}}
+                    </key-point-value>
+                </key-point>
+            </key-points>
+            <cost-section>
+                <monthly-cost>
+                    <h3>Monthly Cost</h3>
+                    <div class="monthlyCostAmount">{{ offer.data.costsWithLineRental.monthlyCostDisplay}}</div>
+                    <div class="note">{{ offer.data.costsWithLineRental.monthlyCostNote}}</div>
+                    <button ng-click="offer.showDetailedCost = !offer.showDetailedCost">Breakdown</button>
+                </monthly-cost>
+                <detailed-cost ng-show="offer.showDetailedCost">
+                    <h3>Monthly Cost</h3>
+                    <p ng-repeat="breakdown in offer.data.costsWithLineRental.costBreakdown">
+                        {{breakdown.value}} {{breakdown.description}}
+                    </p>
+                    <h3>Installation Cost</h3>
+                    <p>{{offer.data.costsWithLineRental.installationCostDisplay}}</p>
+                    <h3>Delivery Cost</h3>
+                    <p>{{offer.data.costsWithLineRental.deliveryCostDisplay}}</p>
 
-                    </detailed-cost>
-                </cost-section>
+                </detailed-cost>
+            </cost-section>
 
-            </main-body>
+        </main-body>
+        </offer-body>
 </body>
 </html>

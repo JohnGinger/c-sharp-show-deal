@@ -105,8 +105,10 @@
       <SubType>
       </SubType>
     </Content>
-    <Content Include="Static\css\app.scss" />
-    <Content Include="Static\css\_colours.scss" />
+    <Content Include="Static\css\app.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <BrowseToURL>~/Static/css/app.css</BrowseToURL>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,89 @@
+﻿body {
+    background-color: #f5f5f5;
+}
+
+select-button {
+    background-color: black;
+    display: block;
+    padding: 0.5em;
+}
+
+title-section{
+display:flex;
+}
+
+offer-body {
+    background-color: white;
+    display: block;
+    border: 1px solid lightgrey;
+    margin: 1em;
+    box-shadow: 2px 2px #f1f1f1;
+ }
+
+title-section h1{
+    flex: 1 1 auto;
+    background-color: #5d5d5d;
+    color: white;
+    margin: 0;
+    padding: 0.2em;
+}
+
+.start-order {
+    font-size: 1.5em;
+    background-color: cadetblue;
+    padding: 0.5em;
+    color: white;
+}
+
+header-block {
+    display:flex; 
+        padding: 1em;
+
+}
+
+main-body{
+    padding: 1em;
+    display: block;
+}
+
+key-points{
+    display:flex;
+    flex-flow: row wrap;
+}
+
+key-point{
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+    background-color: cadetblue;
+    padding-top: 0;
+    border-radius: 4px;
+    color:white;
+    flex: 1 0 0px;
+}
+
+key-point h3 {
+    font-size:1em;
+}
+
+key-point-value {
+    font-size:1.5em;
+}
+
+provider-block {
+    display: flex;
+    align-items: center;
+    }
+
+offer-type{
+        padding: 1em;
+    flex: 1 1 auto; 
+}
+
+offer-type h2 {
+margin-top: 0;
+}
+
+.monthlyCostAmount{
+   font-size: 2em;
+}
