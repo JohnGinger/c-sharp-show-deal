@@ -82,8 +82,10 @@
     <Content Include="Static\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Static\js\app.js" />
-    <Content Include="Static\js\controller.js" />
+    <Content Include="Static\js\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <BrowseToURL>~/Static/js/app.js</BrowseToURL>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -92,6 +94,8 @@
     <Compile Include="App.cs" />
     <Compile Include="Bootstrapper1.cs" />
     <Compile Include="ApiService.cs" />
+    <Compile Include="Models\CostBreakdown.cs" />
+    <Compile Include="Models\Costs.cs" />
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\OfferApiResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

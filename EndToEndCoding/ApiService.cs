@@ -16,9 +16,9 @@ namespace EndToEndCoding
                 var jsonData = string.Empty;
                 try
                 {
-                    String endPoint = System.Configuration.ConfigurationManager.AppSettings["endpoint"];
-                    String apiKey = System.Configuration.ConfigurationManager.AppSettings["apiKey"];
-       
+                    string endPoint = System.Configuration.ConfigurationManager.AppSettings["endpoint"];
+                    string apiKey = System.Configuration.ConfigurationManager.AppSettings["apiKey"];
+                    w.Encoding = System.Text.Encoding.UTF8;
                     jsonData = w.DownloadString(endPoint + apiKey);
                 }
                 catch (Exception) {

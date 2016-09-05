@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿
 namespace EndToEndCoding
 {
     public class Offer
@@ -22,9 +18,6 @@ namespace EndToEndCoding
         public string telephoneNumber { get; set; }
         public string linkTrackerUrl { get; set; }
         public string offerTypeImage { get; set; }
-        public string monthlyCostDisplay { get; set; }
-        public string monthlyCostNote { get; set; }
-        public string firstYearCostDisplay { get; set; }
-        public string lineRentalDisplay { get; set; }
+        public Costs costsWithLineRental { get; set; }
     }
 }
