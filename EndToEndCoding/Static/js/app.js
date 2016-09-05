@@ -6,6 +6,7 @@ angular.module('offerApp', [])
       
       offer.loaded = false;
       offer.showDetailedCost = false;
+      offer.error = false;
 
       offer.getOffer = function (offerId) {
           $http.get('/api/offer/' + offerId, {}).then(function (response) {
@@ -13,6 +14,7 @@ angular.module('offerApp', [])
               offer.loaded = true;
           }, function () {
               offer.error = true;
+              offer.loaded = false;
           });
       }
       

@@ -20,6 +20,15 @@ offer-body {
     box-shadow: 2px 2px #f1f1f1;
  }
 
+error-box {
+    border: 1px solid lightgrey;
+    padding:1em;
+    font-size:2em;
+    display: block;
+    margin: 1em;
+    background-color: white;
+}
+
 title-section h1{
     flex: 1 1 auto;
     background-color: #5d5d5d;
@@ -37,8 +46,7 @@ title-section h1{
 
 header-block {
     display:flex; 
-        padding: 1em;
-
+    padding: 1em;
 }
 
 main-body{
@@ -48,7 +56,19 @@ main-body{
 
 key-points{
     display:flex;
-    flex-flow: row wrap;
+    flex-flow: row;
+}
+
+@media screen and (max-width: 600px) {
+    key-points{
+        flex-flow: column;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    key-points{
+        flex-flow: row;
+    }
 }
 
 key-point{
@@ -60,6 +80,8 @@ key-point{
     border-radius: 4px;
     color:white;
     flex: 1 0 0px;
+    padding-bottom: 0.5em;
+    display:block;
 }
 
 key-point h3 {
@@ -86,4 +108,8 @@ offer-type h2 {
 
 .monthlyCostAmount{
    font-size: 2em;
+}
+
+[ng-cloak] {
+    display:none;
 }

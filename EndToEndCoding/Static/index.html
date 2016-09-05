@@ -1,6 +1,7 @@
 ﻿<!doctype html>
 <html ng-app="offerApp">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="Static/css/app.css" />
@@ -12,7 +13,10 @@
         <button ng-click="offer.getOffer(0)" class="btn btn-default">Show Offer 1</button>
         <button ng-click="offer.getOffer(1)" class="btn btn-default">Show Offer 2</button>
     </select-button>
-    <offer-body ng-show="offer.loaded">
+    <error-box ng-show="offer.error">
+        That offer could not be loaded, please try again.
+    </error-box>
+    <offer-body ng-show="offer.loaded" ng-cloak>
         <title-section>
             <h1>Your Chosen Bundle</h1>
             <a ng-href="{{offer.data.linkTrackerUrl}}" class="start-order">Start Your Order</a>
