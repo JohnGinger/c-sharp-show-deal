@@ -73,15 +73,15 @@ key-point-value {
 provider-block {
     display: flex;
     align-items: center;
-    }
+}
 
 offer-type{
-        padding: 1em;
+    padding: 1em;
     flex: 1 1 auto; 
 }
 
 offer-type h2 {
-margin-top: 0;
+    margin-top: 0;
 }
 
 .monthlyCostAmount{

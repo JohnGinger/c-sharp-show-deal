@@ -7,10 +7,6 @@ angular.module('offerApp', [])
       offer.loaded = false;
       offer.showDetailedCost = false;
 
-      offer.getAverageMonthlyCost = function () {
-
-      }
-
       offer.getOffer = function (offerId) {
           $http.get('/api/offer/' + offerId, {}).then(function (response) {
               offer.data = response.data;
